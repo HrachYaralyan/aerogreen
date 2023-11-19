@@ -4,7 +4,7 @@ let btn_off = document.getElementById("btn_off");
 
 let btn_2 = document.getElementById("btn_2");
 let btn_off_2 = document.getElementById("btn_off_2");
-
+let memory  =[20, 37];
 // let show = document.getElementById("show");
 
 let btn_pump_span_translate = document.getElementById("btn_pump_span_translate");
@@ -282,7 +282,7 @@ var gaugeHum = new RadialGauge({
 }).draw();
  
 
-let memory  =[20, 37];
+
 
 
 // Function to get current readings on the webpage when it loads for the first time
