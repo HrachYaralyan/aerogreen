@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.7/all/gauge.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <!-- <button id="btn" class="btn">on</button> -->
+    <!-- <button id="btn_off" class="btn">off</button> -->
+    <button id="show" class="btn">show data</button>
+
+
+
+
+    <div class="topnav">
+            <h1>Aero Green</h1>
+    </div>
+    <div class="content">
+        <div class="card-grid ">
+         
+            <div class="card card_temp">
+                <div class="analitic_temp">
+                    <a href="https://thingspeak.com/channels/2350014/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line" target="_blank">
+                    <div class="loader">
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__ball"></div>
+                    </div>
+                </a>
+            </div>
+                <p class="card-title">Ջերմաստիճան</p>
+                <canvas id="gauge-temperature"></canvas>
+            </div>
+            <div class="card card_humadity">
+                <div class="analitic_temp">
+                    <a href="https://thingspeak.com/channels/2350014/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Humidity&type=line" target="_blank">
+                    <div class="loader">
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__ball"></div>
+                    </div>
+                </a>
+            </div>
+                <p class="card-title">Խոնավություն</p>
+                <canvas id="gauge-humidity"></canvas>
+            </div>
+            <div class="card warer_pump_section ">
+                <div class="warer_pump_box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5202/5202416.png" alt="">
+                </div>
+                <div class="button_body">
+                    <button class="btn_pump  btn_pump_on" id="btn">
+                        <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1"
+                            class="sparkle">
+                            <path
+                                d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z">
+                            </path>
+                        </svg>
+                        
+                        <span class="text" id="btn_pump_span_translate">Միացնել Պոմպը</span>
+                    </button>
+                    <button class="btn_pump " id="btn_off">
+                        <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1"
+                            class="sparkle">
+                            <path
+                                d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z">
+                            </path>
+                        </svg>
+                        
+                        <span class="text" id="btn_pump_span_translate">Անջատել Պոմպը</span>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card warer_pump_section ">
+                <div class="warer_pump_box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4186/4186708.png" alt="">
+                </div>
+                <div class="button_body">
+                 
+                    <button class="btn_pump btn_pump_on" id="btn_2" >
+                        <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1"
+                            class="sparkle">
+                            <path
+                                d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z">
+                            </path>
+                        </svg>
+
+                        <span class="text">Միացնել Ջեռուցումը</span>
+                    </button>
+                    <button class="btn_pump" id="btn_off_2" >
+                        <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1"
+                            class="sparkle">
+                            <path
+                                d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z">
+                            </path>
+                        </svg>
+
+                        <span class="text">Անջատել Ջեռուցումը</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card warer_pump_section ">
+                <div class="warer_pump_box">
+                    <img src="https://i.ytimg.com/vi/YDQve-iINs0/maxresdefault.jpg" alt="">
+                </div>
+                <div class="button_body">
+                   
+
+                        <span class="text">...Մոտ Ապագայում </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js.js"></script>
+</body>
+
+</html>
